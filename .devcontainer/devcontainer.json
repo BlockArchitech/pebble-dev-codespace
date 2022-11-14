@@ -1,8 +1,10 @@
 {
-  "build": { "dockerfile": "Dockerfile" },
    "hostRequirements": {
      "cpus": 1,
      "memory": "4gb",
      "storage": "12gb" 
+  },
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   }
 }
