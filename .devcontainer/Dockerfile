@@ -10,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
-RUN pip2 install virtualenv
+RUN pip install virtualenv
 #manually install latest gcc-arm
 RUN curl -sSL https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2 \
    | tar -C /opt/ -xj
