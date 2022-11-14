@@ -4,11 +4,13 @@ FROM debian:stable
 
 # update system and get base packages
 RUN apt-get update && \
-    apt-get install -y curl gcc git make python2.7 python2.7-dev python-dev python3-dev  python3-pip python python-virtualenv python3-virtualenv libfreetype6-dev bash-completion libsdl1.2debian \
+    apt-get install -y curl gcc git make python2.7 python2.7-dev python-dev python3-dev  python3-pip python python3-virtualenv libfreetype6-dev bash-completion libsdl1.2debian \
                        libfdt1 libpixman-1-0 libglib2.0-dev gawk && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+RUN pip2 install virtualenv
 #manually install latest gcc-arm
 RUN curl -sSL https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2 \
    | tar -C /opt/ -xj
