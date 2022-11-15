@@ -1,7 +1,7 @@
 FROM debian:stable
 
 RUN apt-get update
-RUN apt-get install \
+RUN apt-get install -y \
     ca-certificates \
     curl \
     gnupg \
@@ -12,6 +12,6 @@ RUN echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN apt-get update
-RUN apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 RUN docker run --name=RebbleSDK -it rebble/pebble-sdk
