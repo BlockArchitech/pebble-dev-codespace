@@ -7,7 +7,5 @@
     "features": {
       "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   },
-    "build": {
-       "dockerfile": "Dockerfile"
-    }
+   "postCreateCommand": "curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && docker run --name=RebbleSDK -it rebble/pebble-sdk"
 }
